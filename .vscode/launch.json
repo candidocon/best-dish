@@ -6,8 +6,8 @@
       "request": "attach",
       "name": "DEBUG Irongenerate",
       "port": 9229,
-      "protocol": "inspector",
-      "restart": "true"
+      // "protocol": "inspector",
+      "restart": true
     }
   ]
 }
