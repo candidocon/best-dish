@@ -22,13 +22,12 @@ router.get("/add-location", (req, res, next) => {
 });
 
 router.post("/add-location", uploadCloud.single("image"), (req, res, next) => {
-  console.log(req.file);
   const name = req.body.name;
   const streetAddress = req.body.streetAddress;
   const city = req.body.city;
   const state = req.body.state;
   const zipCode = req.body.zipCode;
-  const img = req.file.url;
+  const img = (req.file)? req.file.url : "/images/coming-soon.png";
   const status = "open";
   Location.create({
     name: name,
@@ -41,7 +40,6 @@ router.post("/add-location", uploadCloud.single("image"), (req, res, next) => {
     pic: img
   })
     .then(() => {
-      console.log("yay");
       res.redirect("/all-locations");
     })
     .catch(err => {
