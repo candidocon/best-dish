@@ -17,9 +17,9 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 
 const flash = require("connect-flash");
-
+mongoose.set('strictQuery', true); //prepare for change in mongoose in version 7 
 mongoose
-  .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
+  .connect(process.env.MONGODB_URI)
   .then(x => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
@@ -28,6 +28,8 @@ mongoose
   .catch(err => {
     console.error("Error connecting to mongo", err);
   });
+
+
 
 const app_name = require("./package.json").name;
 const debug = require("debug")(
