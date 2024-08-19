@@ -71,6 +71,8 @@ app.use(
   })
 );
 
+app.use(passport.authenticate('session'));
+
 passport.serializeUser((user, cb) => {
   cb(null, user._id);
 });

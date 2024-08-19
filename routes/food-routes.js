@@ -45,9 +45,6 @@ router.get("/food/:foodId", (req, res, next) => {
   let foodId = req.params.foodId;
   Food.findById(foodId)
     .then(foodInfo => {
-      if (foodInfo.owner === req.user._id) {
-        foodInfo.isowner = true;
-      }
       Location.findById(foodInfo.location)
         .then(oneLocation => {
           res.render("food-views/food-show", {
