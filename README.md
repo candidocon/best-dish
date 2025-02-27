@@ -6,6 +6,7 @@ This project previously relied on the Zomato API for location information. Howev
 
 ## Overview
 Best Dish is a full CRUD web application that allows users to share and discover the best dishes from local restaurants. Users can add their favorite dishes, browse other recommendations, and engage with the foodie community.
+Best Dish was my second project at IronHack, developed in under a month as part of an intensive learning experience. This project demonstrates my ability to efficiently design, build, and deploy a full CRUD web application while adhering to best practices in modern web development.
 
 ## Features
 - 🌟 Add your favorite dishes from restaurants
